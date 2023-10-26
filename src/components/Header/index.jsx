@@ -1,6 +1,6 @@
 {/* INDEX do Heade */}
 
-import Logo from '../../assets/dev-logoII.png'
+import Logo from '../../assets/EMBULOGOI.png'
 function Header(){
 
     return(

@@ -1,6 +1,7 @@
 {/*INDEX HOME do container */}
 
 import api from "../../services/api"
+import { Background } from "./styles"
 
 function Home(){
  async function getMovies(){
@@ -9,13 +10,12 @@ function Home(){
   }
   getMovies()
     return(
-        <div>
-            
+        <Background img="https://image.tmdb.org/t/p/original/kuf6dutpsT0vSVehic3EZIqkOBt.jpg">            
             <h1>Home</h1>
             <p>Esta é uma pagina Home</p>
             <h2>MODULO II REACT</h2>
-            <h3>Routes Outlet</h3>
-        </div>
+            <h3>Estilizando o Background</h3>
+        </Background>
     )
 }
 export default Home
