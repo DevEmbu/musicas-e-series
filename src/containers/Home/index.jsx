@@ -1,25 +1,53 @@
 {/*INDEX HOME do container */}
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import api from "../../services/api"
-import { Background } from "./styles"
+import { Background, Info, Poster, Container } from "./styles"
+import Button from "../../components/Buttons"
 
 function Home(){
   const [movie, setMovie] = useState()
 
- async function getMovies(){
-    const data = await api.get('/movie/popular')  
-    
-    setMovie(data.data.results[1])
+useEffect(() => {
+  async function getMovies(){
+    const {
+      data: {results}
+      } = await api.get('/movie/popular')  
+      
+       setMovie(results[7])
+       console.log(movie)
   }
-  getMovies()
+  
+  getMovies()  
+}, [])
+
+
     return(
-        <Background img="https://api.themoviedb.org/3/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg">            
+      <>
+      { movie &&  (
+
+        <Background img={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}>            
+          
+         <Container>
+         <Info>
             <h1>{movie.title}</h1>
-            <p>Esta é uma pagina Home</p>
-            <h2>MODULO II REACT</h2>
-            <h3>useStates - REACT II</h3>
+            <p>{movie.overview}</p>
+            <h3>MODULO II REACT</h3>
+            <h3>Aprendendo Sobre Components no React</h3>
+          <div>
+            <button> Assista Agora </button>
+            <button> Assista o Trailler </button>
+          </div>
+          </Info>
+          
+          <Poster>
+            <img alt="poster-do-filme" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
+          </Poster>          
+          </Container>
+          
         </Background>
+               )}
+        </>
     )
 }
 export default Home

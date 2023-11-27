@@ -10,5 +10,5 @@ const api = axios.create({
               page: 1
 
             }
-})
+          })
 export default api
