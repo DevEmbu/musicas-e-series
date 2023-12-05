@@ -5,6 +5,7 @@ import api from "../../services/api"
 import { Background, Info, Poster, Container } from "./styles"
 import Button from "../../components/Buttons"
 
+
 function Home(){
   const [movie, setMovie] = useState()
 
@@ -14,7 +15,7 @@ useEffect(() => {
       data: {results}
       } = await api.get('/movie/popular')  
       
-       setMovie(results[7])
+       setMovie(results[0])
        console.log(movie)
   }
   
@@ -33,13 +34,13 @@ useEffect(() => {
             <h1>{movie.title}</h1>
             <p>{movie.overview}</p>
             <h3>MODULO II REACT</h3>
-            <h3>Aprendendo Sobre Components no React</h3>
-          <div>
-            <button> Assista Agora </button>
-            <button> Assista o Trailler </button>
-          </div>
+            <h3>Aprendendo Sobre Components no React - pt 02</h3>
+              <div>
+                <Button red={true}>Assista Agora</Button>
+                <Button red={false}>Assista o Trailer</Button>
+              </div>
           </Info>
-          
+         
           <Poster>
             <img alt="poster-do-filme" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
           </Poster>          

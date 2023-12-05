@@ -38,7 +38,7 @@ export const Info = styled.div`
    padding: 20px;
    width: 50%;
   h1{
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: #ffffff;
      }

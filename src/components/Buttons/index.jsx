@@ -1,11 +1,16 @@
 /* INDEX DO  BUTTON */
+ import { ButtonRed, ButtonWhite } from './styles'
 
-import { MainButton } from "./styles"
+function Button({children, red}){
 
-
-function Button({ children }){
-
-    return
-    <button>{children}</button>
+  return (
+   <>
+      { red ? (
+       <ButtonRed>{children}</ButtonRed>
+       ):(
+       <ButtonWhite>{children}</ButtonWhite>)
+       }   
+   </>
+  )
 }
 export default Button
