@@ -6,6 +6,7 @@ import { Background, Info, Poster, Container, ContainerButton } from "./styles"
 
 import Slider from '../../components/Sliders'
 import Button from "../../components/Buttons"
+import { getPosterDeFilmes } from "../../Utils/getImages"
 
 
 
@@ -21,7 +22,7 @@ useEffect(() => {
       data: {results}
       } = await api.get('/movie/popular')  
       
-       setMovie(results[6])
+       setMovie(results[3])
       // console.log(results[0])
   }
   // FUNÇÃO QUE VAIA CHAMAR OS FILMES MAIS VOTADOS
@@ -40,8 +41,7 @@ useEffect(() => {
     return(
       <>
       { movie &&  (
-        <Background 
-          img={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}>            
+        <Background img={getPosterDeFilmes(movie.backdrop_path)}>            
           
          <Container>
          <Info>
@@ -56,8 +56,7 @@ useEffect(() => {
           </Info>
          
           <Poster>
-            <img alt="poster-do-filme" 
-                 src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
+            <img src={getPosterDeFilmes(movie.poster_path)} alt="poster-do-filme"  />
           </Poster>          
           </Container>
           
