@@ -48,7 +48,7 @@ useEffect(() => {
             <h1>{movie.title}</h1>
             <p>{movie.overview}</p>
             <h3>MODULO II REACT</h3>
-            <h3>CRIANDO CARROSSEL - pt 03</h3>
+            <h3>ESTILIZANDO O CARROSSEL DE FILMES - pt 03</h3>
               <ContainerButton>
                 <Button red>Assista Agora</Button>
                 <Button>Assista o Trailer</Button>
