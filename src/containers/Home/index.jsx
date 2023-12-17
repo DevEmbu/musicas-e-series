@@ -13,6 +13,7 @@ import { getPosterDeFilmes } from "../../Utils/getImages"
 function Home(){
   const [movie, setMovie] = useState()
   const [topMoviesPopular, setTopMoviesPopular] = useState()
+  const [seriePrincipal, setSeriePrincipal] = useState()
 
 
 useEffect(() => {
@@ -25,16 +26,25 @@ useEffect(() => {
        setMovie(results[3])
       // console.log(results[0])
   }
-  // FUNÇÃO QUE VAIA CHAMAR OS FILMES MAIS VOTADOS
+  // FUNÇÃO QUE VAI CHAMAR OS FILMES MAIS VOTADOS
   async function getTopMoviesPopular(){
         const {data: {results}
               } = await api.get('/movie/top_rated')
               //console.log(results)
               setTopMoviesPopular(results)
   }
+
+  //FUNÇÃO VAI CHAMAR AS SERIES TOP DO FILME
+  async function getSeriePrincipal(){
+        const {data: {results}
+        } = await api.get('/tv/top_rated')
+         
+        setSeriePrincipal(results)
+  }
   
   getMovies() 
   getTopMoviesPopular() 
+  getSeriePrincipal()
 }, [])
 
 
@@ -48,7 +58,7 @@ useEffect(() => {
             <h1>{movie.title}</h1>
             <p>{movie.overview}</p>
             <h3>MODULO II REACT</h3>
-            <h3>ESTILIZANDO O CARROSSEL DE FILMES - pt 03</h3>
+            <h3>CRIANDO O CARROSSEL DE SERIES - pt 03</h3>
               <ContainerButton>
                 <Button red>Assista Agora</Button>
                 <Button>Assista o Trailer</Button>
@@ -63,6 +73,7 @@ useEffect(() => {
         </Background>
                )}
           {topMoviesPopular && <Slider info={topMoviesPopular} title={'Filmes Populares'} />}
+          {seriePrincipal && <Slider info={seriePrincipal} title={'Series Principais'} />}
         </>
     )
 }

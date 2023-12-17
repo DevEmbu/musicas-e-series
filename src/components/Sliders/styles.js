@@ -15,7 +15,8 @@ export const ContainerSlider = styled.div`
    h3{
     color: #ffffff;
     margin: 15px 0 10px 5px;  
-    font-size: 20px;
+    font-size: 17px;
+    font-weight: 500;
 
    }
       .swiper-wrapper { 
