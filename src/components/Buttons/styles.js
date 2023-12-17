@@ -10,8 +10,7 @@ const buttonStyles= css`
    font-size: 20px;
    font-weight: 500;
    cursor: pointer;
-   margin-top: 30px;
-
+  
    &:hover{
       background: #ffffff;
       color: #ff0000;
@@ -27,6 +26,7 @@ export const ButtonRed = styled.button`
    background: #ff0000;
    border: 4px solid transparent; 
    color: #ffffff;
+   
 
    &:hover{
       box-shadow: 0px 0px 31px 9px rgba(204,197,59,1);

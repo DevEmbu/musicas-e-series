@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Background = styled.div`
   background-image: url(${(props) => props.img});
@@ -32,7 +32,7 @@ export const Container = styled.div`
 `
 
 
-
+// informações da Info
 export const Info = styled.div` 
    z-index: 2;
    padding: 20px;
@@ -56,6 +56,7 @@ export const Info = styled.div`
      }
 
 `
+// chama o poster
 export const Poster = styled.div`
    z-index: 3;
    img{
@@ -64,4 +65,10 @@ export const Poster = styled.div`
     
    }
 
+`
+// container do botoes
+export const ContainerButton = styled.div`
+   display: flex;
+   gap: 20px;
+   margin-top: 30px;
 `

@@ -1,5 +1,6 @@
 /* INDEX DO  BUTTON */
- import { ButtonRed, ButtonWhite } from './styles'
+// import { ContainerButtons } from '../../containers/Home/styles'
+import { ButtonRed, ButtonWhite } from './styles'
 
 function Button({children, red}){
 
@@ -8,8 +9,8 @@ function Button({children, red}){
       { red ? (
        <ButtonRed>{children}</ButtonRed>
        ):(
-       <ButtonWhite>{children}</ButtonWhite>)
-       }   
+       <ButtonWhite>{children}</ButtonWhite>
+       )}   
    </>
   )
 }
