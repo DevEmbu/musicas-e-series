@@ -23,7 +23,7 @@ useEffect(() => {
       data: {results}
       } = await api.get('/movie/popular')  
       
-       setMovie(results[3])
+       setMovie(results[5])
       // console.log(results[0])
   }
   // FUNÇÃO QUE VAI CHAMAR OS FILMES MAIS VOTADOS
@@ -41,6 +41,8 @@ useEffect(() => {
          
         setSeriePrincipal(results)
   }
+
+
   
   getMovies() 
   getTopMoviesPopular() 
@@ -57,8 +59,8 @@ useEffect(() => {
          <Info>
             <h1>{movie.title}</h1>
             <p>{movie.overview}</p>
-            <h3>MODULO II REACT</h3>
-            <h3>CRIANDO O CARROSSEL DE SERIES - pt 03</h3>
+            <h3>MODULO III REACT</h3>
+            <h3>Criando Header</h3>
               <ContainerButton>
                 <Button red>Assista Agora</Button>
                 <Button>Assista o Trailer</Button>
